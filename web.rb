@@ -27,7 +27,7 @@ post '/charge' do
       :currency => "usd",
       :customer => @customer.id,
       :source => source,
-      :description => "Example Charge"
+      :description => "测试交易"
     )
   rescue Stripe::StripeError => e
     status 402
@@ -91,7 +91,7 @@ def authenticate!
     end
   else
     begin
-      @customer = Stripe::Customer.create(:description => "iOS SDK example customer")
+      @customer = Stripe::Customer.create(:description => "测试交易员")
     rescue Stripe::InvalidRequestError
     end
     session[:customer_id] = @customer.id
@@ -110,7 +110,7 @@ post '/charge_card' do
       :amount => params[:amount], # this number should be in cents
       :currency => "usd",
       :card => token,
-      :description => "Example Charge"
+      :description => "测试交易"
     )
   rescue Stripe::StripeError => e
     status 402
