@@ -31,7 +31,7 @@ post '/charge' do
     )
   rescue Stripe::StripeError => e
     status 402
-    puts "Error creating charge: #{e.message}"
+    print "Error creating charge: #{e.message}"
     return "Error creating charge: #{e.message}"
   end
 
