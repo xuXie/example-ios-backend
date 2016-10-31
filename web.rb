@@ -27,7 +27,7 @@ post '/charge' do
       :currency => "usd",
       :customer => @customer.id,
       :source => source,
-      :metadata => "{\"orderId\":\"2016103100001\"}",
+      :metadata => metadata["orderId" => "2016103100001"],
       :description => "测试交易"
     )
   rescue Stripe::StripeError => e
