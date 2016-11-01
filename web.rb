@@ -36,7 +36,7 @@ post '/charge' do
   end
 
   status 200
-  return (Hash["result" => "0","message" => "Charge successfully created"]).to_s#{}"Charge successfully created"
+  return (Hash["result" => "0","message" => "Charge successfully created"]).to_json#{}"Charge successfully created"
 end
 
 get '/customer' do
