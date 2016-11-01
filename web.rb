@@ -32,12 +32,11 @@ post '/charge' do
     )
   rescue Stripe::StripeError => e
     status 402
-    print "Error creating charge: #{e.message}"
     return "Error creating charge: #{e.message}"
   end
 
   status 200
-  return "Charge successfully created"
+  return Hash["result" => "0","message" => "Charge successfully created"]#{}"Charge successfully created"
 end
 
 get '/customer' do
