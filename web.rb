@@ -25,9 +25,9 @@ post '/charge' do
     charge = Stripe::Charge.create(
       :amount => params[:amount], # this number should be in cents
       :currency => "usd",
-      :customer => @customer.id,
+      :customer => "cus_9TssITGREyBrWC",# @customer.id,
       :source => source,
-      :metadata => Hash["orderId" => "2016103100001"],
+      :metadata => Hash["orderId" => params[:orderId]],
       :description => "测试交易"
     )
   rescue Stripe::StripeError => e
