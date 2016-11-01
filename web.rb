@@ -32,7 +32,7 @@ post '/charge' do
     )
   rescue Stripe::StripeError => e
     status 402
-    return "Error creating charge: #{e.message}"
+    return (Hash["result" => "1","message" => "Error creating charge: #{e.message}"]).to_json#{}"Error creating charge: #{e.message}"
   end
 
   status 200
