@@ -36,7 +36,7 @@ post '/charge' do
   end
 
   status 200
-  return "{\"result\":"0",\"message\":\"Charge successfully created\"}"#Hash["result" => "0","message" => "Charge successfully created"]#{}"Charge successfully created"
+  return "{\"result\"="0",\"message\"=\"Charge successfully created\"}"#Hash["result" => "0","message" => "Charge successfully created"]#{}"Charge successfully created"
 end
 
 get '/customer' do
