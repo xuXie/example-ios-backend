@@ -8,7 +8,7 @@ Dotenv.load
 Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
 
 use Rack::Session::EncryptedCookie,
-  :secret => 'sk_test_XWJpwC0P5UUztCK8rGoAcIS8' # Actually use something secret here!
+  :secret => 'sk_test_QKD1s4PqAxwDxVCdThtkYTcA' # Actually use something secret here!
 
 get '/' do
   status 200
@@ -25,7 +25,7 @@ post '/charge' do
     charge = Stripe::Charge.create(
       :amount => params[:amount], # this number should be in cents
       :currency => "usd",
-      :customer => "cus_9TssITGREyBrWC",# @customer.id,
+      :customer => "cus_9UHMYNz0tvFvlL",# @customer.id,
       :source => source,
       :metadata => Hash["orderId" => params[:orderId]],
       :description => "测试交易"
